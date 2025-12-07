@@ -108,7 +108,12 @@ app = FastAPI(lifespan=lifespan)
 # CORS - Fixed to allow all origins during development
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
+        "https://github.com/Muhammad-Nawaz453/",  # Add your GitHub Pages URL
+        "https://*.vercel.app",  # Keep this for Vercel previews
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
